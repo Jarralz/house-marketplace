@@ -397,10 +397,10 @@ button {
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 15vw;
+  height: 20vw;
   width: 100%;
   border-radius: 1.5rem;
-  object-fit: cover;
+  object-fit: fill;
   margin: 0 auto;
 }
 
@@ -431,9 +431,9 @@ button {
 
 .categoryListingImg {
   width: 30%;
-  height: 100px;
+  height: 170px;
   border-radius: 1.5rem;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 @media (min-width: 1024px) {

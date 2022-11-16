@@ -47,7 +47,7 @@ function Slider() {
     }
 
     if (listings.length === 0) {
-        return <></>
+        return <></>;
     }
     return (
         listings && (
@@ -63,7 +63,7 @@ function Slider() {
                     pagination={{ clickable: true }}
                 >
                     {listings.map(({ data, id }) => (
-                        <SwiperSlide style={{ height: 'auto' }} key={id} onClick={() => navigate(`/category/${data.type}/${id}`)}>
+                        <SwiperSlide style={{ height: 'auto', maxHeight: '550px' }} key={id} onClick={() => navigate(`/category/${data.type}/${id}`)}>
                             <img
                                 style={{ width: '100%', height: '100%', display: 'block', borderRadius: '1.5rem' }}
                                 src={data.imgUrls}
@@ -71,7 +71,10 @@ function Slider() {
                             />
                             <p className='swiperSlideText'>{data.name}</p>
                             <p className='swiperSlidePrice'>
-                                ${data.discountedPrice ?? data.regularPrice} {data.type === 'rent' && '/ month'}
+                                ${
+                                    //eslint-disable-next-line
+                                    data.discountedPrice ?? data.regularPrice
+                                } {data.type === 'rent' && '/ month'}
                             </p>
                         </SwiperSlide>
                     ))}

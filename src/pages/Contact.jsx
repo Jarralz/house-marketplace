@@ -38,7 +38,12 @@ function Contact() {
             {landlord !== null && (
                 <main>
                     <div className='contactLandlord'>
-                        <p className='landlordName'>Contact {landlord ?.name}</p>
+                        <p className='landlordName'>Contact
+                            {
+                                // eslint-disable-next-line
+                                landlord ?.name
+                            }
+                        </p>
                     </div>
 
                     <form className='messageForm'>

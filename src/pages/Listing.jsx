@@ -59,13 +59,12 @@ function Listing() {
             >
                 {listing.imgUrls.map((url, index) => {
                     return (
-                        <SwiperSlide style={{ height: 'auto' }} key={index}>
-                            <img style={{ width: '100%', height: '100%', display: 'block' }} src={url} alt='{listing.title}' />
+                        <SwiperSlide style={{ height: 'auto', maxHeight: '550px' }} key={index}>
+                            <img style={{ width: '100%', height: '100%', display: 'block'}} src={url} alt='{listing.title}' />
                         </SwiperSlide>
                     );
                 })}
             </Swiper>
-
             <div
                 className='shareIconDiv'
                 onClick={() => {
@@ -138,19 +137,19 @@ function Listing() {
                         </Marker>
                     </MapContainer>
                 </div>
-
-                {auth.currentUser ?.uid !== listing.userRef && (
-                    <Link
-                        to={`/contact/${listing.userRef}?listingName=${listing.name}`}
-                        className='primaryButton'>
-                        Contact Owner
+                {
+                    //eslint-disable-next-line
+                    auth.currentUser ?.uid !== listing.userRef && (
+                        <Link
+                            to={`/contact/${listing.userRef}?listingName=${listing.name}`}
+                            className='primaryButton'>
+                            Contact Owner
                     </Link>
-                )}
+                    )
+                }
             </div>
         </main>
     )
 }
 
-export default Listing
-
-  // https://stackoverflow.com/questions/67552020/how-to-fix-error-failed-to-compile-node-modules-react-leaflet-core-esm-pat
+export default Listing;

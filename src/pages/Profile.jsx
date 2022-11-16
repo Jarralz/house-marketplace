@@ -133,7 +133,7 @@ function Profile() {
                     <p>Sell or rent your home</p>
                     <img src={arrowRight} alt="arrow right" />
                 </Link>
-                {!loading && listings ?.length > 0 && (
+                {!loading && listings.length > 0 && (
                     <>
                         <p className='listingText'>Your Listings</p>
                         <ul className='listingsList'>
