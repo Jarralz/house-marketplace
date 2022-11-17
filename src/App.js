@@ -35,7 +35,6 @@ function App() {
           <Route path='/contact/:landlordId' element={<Contact />} />
         </Routes>
         <Navbar />
-
         <ToastContainer />
       </Router>
     </>
